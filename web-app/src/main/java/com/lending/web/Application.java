@@ -1,4 +1,5 @@
-package com.lending;
+package com.lending.web;
+
 import com.lending.dao.models.mongo.ActiveLoan;
 import com.lending.dao.repositories.mongo.ActiveLoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.lending")
 public class Application {
 
 
@@ -15,7 +16,7 @@ public class Application {
     private ActiveLoanRepository activeLoanRepository;
 
     @Bean
-    CommandLineRunner runner(){
+    CommandLineRunner runner() {
         return args -> {
             System.out.println("CommandLineRunner running in the UnsplashApplication class...");
             activeLoanRepository.save(new ActiveLoan()).block();

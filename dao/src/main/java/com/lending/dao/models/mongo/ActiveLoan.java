@@ -2,10 +2,9 @@ package com.lending.dao.models.mongo;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -15,6 +14,6 @@ import java.util.UUID;
 @Document
 public class ActiveLoan {
     @Id
-    UUID uuid;
+    ObjectId id;
     String name;
 }
