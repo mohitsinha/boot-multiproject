@@ -24,14 +24,19 @@ repositories {
     mavenCentral()
 }
 //
-//jar {
-//    baseName = 'dao'
+jar {
+    enabled=true
+    baseName = 'dao'
 //    version = '0.0.1-SNAPSHOT'
-//}
+}
 
+bootJar{
+    enabled=false
+}
 
 dependencies {
+
     compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
     compileOnly('org.projectlombok:lombok')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+//    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
